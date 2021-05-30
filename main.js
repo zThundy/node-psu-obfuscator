@@ -15,7 +15,7 @@ async function mainFetch(script) {
         "options": config.options
     }
 
-    const a = await fetch(conifg.api_link, {
+    const a = await fetch(config.api_link, {
         method: 'POST',
         body: JSON.stringify(body),
         headers: {
