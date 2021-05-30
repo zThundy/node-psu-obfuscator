@@ -1,0 +1,15 @@
+{
+  "name": "js-lua-obfuscator",
+  "version": "1.0.0",
+  "description": "il mio cazzo",
+  "main": "main.js",
+  "scripts": {
+    "test": "console.log(\"dio bestemmia\")"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "node-fetch": "^2.6.1"
+  }
+}
