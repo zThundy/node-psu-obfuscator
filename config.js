@@ -1,5 +1,5 @@
 var config = {
-    'key': 'YOUR_KEY',
+    'key': 'SfbFJuR9pq5VKkJT66URD1Tong1vrO_KK2HpSxo6GwKy6DBASX',
     'api_link': "https://api.psu.dev/obfuscate",
     'inputPath': "./input/",
     'outPath': "./output/",
@@ -8,7 +8,7 @@ var config = {
         "MaximumSecurityEnabled": false,
         "ControlFlowObfuscation": false,
         "ConstantEncryption": false,
-        "EncryptAllStrings": false,
+        "EncryptAllStrings": true,
         "DisableAllMacros": false,
         "EnhancedOutput": false,
         "EnhancedConstantEncryption": false,

@@ -14,7 +14,6 @@ async function mainFetch(script) {
         "script": script,
         "options": config.options
     }
-
     const a = await fetch(config.api_link, {
         method: 'POST',
         body: JSON.stringify(body),
@@ -22,29 +21,28 @@ async function mainFetch(script) {
             'Content-Type': 'application/json'
         }
     })
-
+    if (a.status !== 200) {
+        console.log("Cannot get result. Please check site status, error code: " + a.status + ": " + a.statusText)
+        return false
+    }
     return await a.json()
 }
 
 async function main(path) {
-    console.log("start func path " + path)
-
+    // console.log("start func path " + path)
     fs.readdir(path, (err, files) => {
         if (err) throw err;
-
         files.forEach(file => {
-            console.log(path + file)
-
+            // console.log(path + file)
             if (!fs.lstatSync(path + file).isDirectory()) {
                 fs.readFile(path + file, 'utf8', async function(err, data) {
                     if (err) throw err;
-
                     var obf_script = await mainFetch(data)
+                    if (!obf_script) return
                     var out = path
                     out = out.replace(inputPath, outPath)
                     out = out + file
                     // console.log(out)
-    
                     fs.writeFile(out, obf_script.data, (err) => {
                         if (err) throw err;
                     })
